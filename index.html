@@ -3,416 +3,962 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sushant Badal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Velocynix - Sushant Badal | Tech Innovation</title>
+    <meta name="description" content="Velocynix - Leading tech innovation company founded by Sushant Badal. Specializing in web development, mobile apps, and digital solutions.">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #111827;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(10px);
         }
-        
-        .nav-link {
+
+        nav.scrolled {
+            background: rgba(17, 24, 39, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo::before {
+            content: "⚡";
+            margin-right: 0.5rem;
+            color: #06b6d4;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+        }
+
+        .nav-links a:hover {
+            color: #06b6d4;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #d1d5db;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #111827 0%, #1e3a8a 50%, #0891b2 100%);
             position: relative;
+            overflow: hidden;
         }
-        
-        .nav-link:after {
+
+        .hero::before {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
+            top: 0;
             left: 0;
-            background-color: #4f46e5;
-            transition: width 0.3s ease;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="1" fill="rgba(59, 130, 246, 0.1)"/></svg>') repeat;
+            opacity: 0.3;
         }
-        
-        .nav-link:hover:after {
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero .name {
+            display: block;
+            color: white;
+        }
+
+        .hero .title {
+            display: block;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid #06b6d4;
+            color: #06b6d4;
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: #06b6d4;
+            color: #111827;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #9ca3af;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            color: #06b6d4;
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(31, 41, 55, 0.5);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 4px solid;
+            border-image: linear-gradient(135deg, #06b6d4, #3b82f6) 1;
+            position: relative;
+        }
+
+        .profile-image img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
-        
-        .skill-pill {
+
+        .profile-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            background: rgba(6, 182, 212, 0.1);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            display: block;
+        }
+
+        .stat-label {
+            color: #9ca3af;
+        }
+
+        .skills {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            margin-top: 3rem;
+        }
+
+        .skills h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-dot {
+            width: 12px;
+            height: 12px;
+            background: #10b981;
+            border-radius: 50%;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(31, 41, 55, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(6, 182, 212, 0.5);
+            background: rgba(31, 41, 55, 0.7);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .service-card:nth-child(1) .service-icon {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+        }
+
+        .service-card:nth-child(2) .service-icon {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+
+        .service-card:nth-child(3) .service-icon {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        }
+
+        .service-card:nth-child(4) .service-icon {
+            background: linear-gradient(135deg, #ec4899, #ef4444);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #9ca3af;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background: rgba(31, 41, 55, 0.5);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(31, 41, 55, 0.5);
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid rgba(75, 85, 99, 0.5);
             transition: all 0.3s ease;
         }
-        
-        .skill-pill:hover {
-            background-color: #4f46e5;
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(6, 182, 212, 0.5);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(6, 182, 212, 0.1);
+            color: #06b6d4;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            space-y: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #06b6d4;
+            font-size: 1.25rem;
+        }
+
+        .contact-details h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p {
+            color: #9ca3af;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: #1f2937;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+        }
+
+        .social-link:hover {
+            background: rgba(6, 182, 212, 0.1);
+            color: #06b6d4;
+        }
+
+        .contact-form {
+            background: rgba(31, 41, 55, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(75, 85, 99, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #d1d5db;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid #4b5563;
+            border-radius: 0.5rem;
             color: white;
-            transform: scale(1.05);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #06b6d4;
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            border-top: 1px solid #1f2937;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo::before {
+            content: "⚡";
+            margin-right: 0.5rem;
+            color: #06b6d4;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: #06b6d4;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: #0891b2;
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .nav-container {
+                padding: 1rem 15px;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .hero {
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen gradient-bg">
+<body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <span class="flex items-center">
-    <img src="c:\Users\Lenovo\Desktop\website\images\noslogan.png" alt="Company Logo" class="h-10">
-</span>
-                    </div>
-                </div>
-                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="#about" class="nav-link border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
-                    <a href="#skills" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Skills</a>
-                    <a href="#projects" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Projects</a>
-                    <a href="#contact" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
-                </div>
-                <div class="-mr-2 flex items-center sm:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="mobile-menu-button">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile menu -->
-        <div class="hidden sm:hidden" id="mobile-menu">
-            <div class="pt-2 pb-3 space-y-1">
-                <a href="#about" class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
-                <a href="#skills" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Skills</a>
-                <a href="#projects" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Projects</a>
-                <a href="#contact" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Velocynix</div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                <li><a href="#services" onclick="scrollToSection('services')">Services</a></li>
+                <li><a href="#portfolio" onclick="scrollToSection('portfolio')">Portfolio</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 mr-0 md:mr-10">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                        Hi, I'm <span class="text-indigo-600">Sushant Badal</span>
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-700 mb-8">
-                        <span class="inline-block">Professional </span>
-                        <span class="inline-block text-indigo-600" id="typewriter"></span>
-                    </h2>
-                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
-                        I create exceptional digital experiences that solve real problems and deliver measurable results.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md text-lg font-medium transition duration-300">Get In Touch</a>
-                        <a href="#projects" class="border border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-md text-lg font-medium transition duration-300">View Work</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center" style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px;">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-xl border-4 border-white">
-                        <img src="c:\Users\Lenovo\Desktop\website\images\A Phot.remini-enhanced.jpg" alt="Professional headshot photo" class="w-full h-full object-cover" style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px;" />
-                    </div>
-                </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>
+                <span class="name">Sushant Badal</span>
+                <span class="title">Tech Innovator</span>
+            </h1>
+            <p>
+                Building the future with cutting-edge technology solutions. 
+                Welcome to <span class="highlight">Velocynix</span> - where innovation meets excellence.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary" onclick="scrollToSection('services')">Explore Services</a>
+                <a href="#contact" class="btn btn-secondary" onclick="scrollToSection('contact')">Get In Touch</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
-                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
-            </div>
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/3 mb-10 md:mb-0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ffd32dd5-adca-4000-ae71-ccbb07a41e2f.png" alt="Professional work environment setup" class="rounded-lg shadow-lg w-full" />
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span class="highlight">Velocynix</span></h2>
+            <p class="section-subtitle">Leading the digital transformation with innovative solutions and cutting-edge technology.</p>
+            
+            <div class="about-grid">
+                <div class="profile-image">
+                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Sushant Badal - Founder of Velocynix">
                 </div>
-                <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Who I Am</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        I'm a passionate professional with 4 years of experience creating impactful digital solutions. My journey in tech field began when Steve Jobs share his vision of the future of technology. I have been working in the field of web development and design for
+                
+                <div class="about-content">
+                    <p>
+                        As the founder of Velocynix, I'm passionate about creating technology solutions that make a real difference. 
+                        With years of experience in the tech industry, I've dedicated my career to pushing the boundaries of what's possible.
                     </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        What drives me is Steve Jobs. I believe in technology. When I'm not working, you can find me doing code.
+                    <p>
+                        Our mission is to empower businesses and individuals through innovative digital solutions, 
+                        from web development to mobile applications and beyond.
                     </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        My approach combines technical expertise with creative problem-solving to deliver solutions that are both functional and delightful to use.
-                    </p>
-                    <div class="flex items-center">
-                        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">Download CV</a>
-                        <div class="ml-8 flex space-x-4">
-                            <a href="#" class="text-gray-600 hover:text-indigo-600">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-600 hover:text-indigo-600">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-600 hover:text-indigo-600">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                                </svg>
-                            </a>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Happy Clients</span>
                         </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills">
+                <h3>Core Expertise</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Full-Stack Development</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Mobile App Development</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Cloud Solutions</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>UI/UX Design</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Digital Strategy</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Tech Consulting</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">My Skills</h2>
-                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
-                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
-                    I've developed expertise in these technologies through years of professional experience and continuous learning.
-                </p>
-            </div>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+            <p class="section-subtitle">Comprehensive technology solutions tailored to your needs.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Technical Skills</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Frontend Development</span>
-                                <span class="text-gray-600">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Backend Development</span>
-                                <span class="text-gray-600">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">UI/UX Design</span>
-                                <span class="text-gray-600">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Modern, responsive websites built with the latest technologies.</p>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Technologies</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">JavaScript</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">React</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Node.js</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Python</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">HTML/CSS</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Tailwind CSS</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">MongoDB</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">PostgreSQL</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Git</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Docker</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">AWS</span>
-                        <span class="skill-pill bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Figma</span>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable cloud infrastructure and deployment solutions.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🗄️</div>
+                    <h3>Data Solutions</h3>
+                    <p>Database design, optimization, and analytics solutions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">My Projects</h2>
-                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
-                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
-                    Here are some of my recent projects that showcase my skills and experience.
-                </p>
-            </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            <p class="section-subtitle">Showcasing some of our most impactful work.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/830a9e7f-f192-4f92-944e-f31e190fb9ae.png" alt="E-commerce administration dashboard interface" class="w-full h-full object-cover" />
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="E-Commerce Platform">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">E-commerce Dashboard</h3>
-                        <p class="text-gray-600 mb-4">A comprehensive management system for online stores with analytics, inventory, and order processing.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">React</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">Node.js</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">MongoDB</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project</a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 font-medium">Code</a>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-stack e-commerce solution with modern UI/UX</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/832067f5-e7ea-490f-a0b7-6e0d309d42bc.png" alt="Mobile health tracking application interface" class="w-full h-full object-cover" />
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="SaaS Management Platform">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Health Tracker App</h3>
-                        <p class="text-gray-600 mb-4">Mobile application for tracking workouts, nutrition, and health metrics with personalized recommendations.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">React Native</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">Firebase</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">Redux</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project</a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 font-medium">Code</a>
+                    <div class="project-content">
+                        <h3>SaaS Management Platform</h3>
+                        <p>Enterprise-grade software management and automation platform</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">PostgreSQL</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fd4df364-21a2-4a45-8ae3-f796d3bb3e2e.png" alt="Smart home automation control interface" class="w-full h-full object-cover" />
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Analytics Dashboard">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Smart Home Automation</h3>
-                        <p class="text-gray-600 mb-4">Web application for controlling and monitoring smart home devices with scheduling and AI optimization.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">Vue.js</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">Python</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">IoT</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm text-gray-700">TensorFlow</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project</a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 font-medium">Code</a>
+                    <div class="project-content">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Real-time data visualization and reporting platform</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block border border-gray-300 text-gray-700 px-6 py-3 rounded-md text-lg font-medium hover:bg-gray-50 transition duration-300">View All Projects</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
-                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
-                    Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
-                </p>
-            </div>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <p class="section-subtitle">Ready to start your next project? Let's discuss how we can help you achieve your goals.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Contact Information</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <svg class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-600">Email</p>
-                                <a href="mailto:you@example.com" class="text-indigo-600 hover:text-indigo-800">you@example.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <svg class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-600">Phone</p>
-                                <a href="tel:+1234567890" class="text-indigo-600 hover:text-indigo-800">+1 (234) 567-890</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <svg class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-600">Location</p>
-                                <p class="text-gray-600">San Francisco, CA</p>
-                            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>sushantbadal3@gmail.com</p>
                         </div>
                     </div>
                     
-                    <div class="mt-8">
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Follow Me</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-600 hover:text-indigo-600">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-600 hover:text-indigo-600">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-600 hover:text-indigo-600">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-600 hover:text-indigo-600">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </a>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+9779765828270</p>
                         </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Kathmandu, Nepal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sushant-badal-838466319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" target="_blank">💼</a>
+                        <a href="https://x.com/SushantBad97587?t=vvK4oXSqTv5vX-TyubYidQ&s=09" class="social-link" target="_blank">🐦</a>
+                        <a href="https://www.facebook.com/sushant.badal.37" class="social-link" target="_blank">📘</a>
+                        <a href="https://www.instagram.com/badal_sushant/?hl=en" class="social-link" target="_blank">📷</a>
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Send Me a Message</h3>
-                    <form>
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 mb-2">Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xpwzgqpb" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                        <div class="mb-4">
-                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
-                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
                         </div>
-                        <div class="mb-4">
-                            <label for="message" class="block text-gray-700 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
-                        </div>
-                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md text-lg font-medium transition duration-300 w-full">Send Message</button>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -420,113 +966,80 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <span class="text-xl font-bold">Velocynix</span>
-                    <p class="text-gray-400 mt-2">Innovative digital solutions by Velocynix.</p>
-                </div>
-                <div class="flex flex-col items-center md:items-end">
-                    <div class="flex space-x-4 mb-4">
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <p class="text-gray-400 text-sm">© 2023 Velocynix. All rights reserved.</p>
-                </div>
-            </div>
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Velocynix</div>
+            <p style="color: #9ca3af; margin-bottom: 1rem;">Building the future, one line of code at a time.</p>
+            <p style="color: #6b7280;">© 2024 Velocynix. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
+
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Typewriter effect
-        const typewriterElement = document.getElementById('typewriter');
-        const professions = ['Developer', 'Designer', 'Problem Solver', 'Creative Thinker'];
-        let i = 0;
-        let j = 0;
-        let currentProfession = '';
-        let isDeleting = false;
-        let isEnd = false;
-
-        function typeWriter() {
-            isEnd = false;
-            typewriterElement.innerHTML = currentProfession.substring(0, j);
-
-            if (!isDeleting && j === currentProfession.length) {
-                isEnd = true;
-                isDeleting = true;
-                setTimeout(typeWriter, 2000);
-                return;
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
             }
-
-            if (isDeleting && j === 0) {
-                currentProfession = professions[i];
-                i = (i + 1) % professions.length;
-                isDeleting = false;
-            }
-
-            if (isEnd) {
-                j--;
-            } else if (isDeleting) {
-                j--;
-            } else {
-                j++;
-            }
-
-            const speedUp = Math.random() * (100 - 50) + 50;
-            const normalSpeed = Math.random() * (300 - 200) + 200;
-            const time = isEnd ? 2000 : isDeleting ? speedUp : normalSpeed;
-            setTimeout(typeWriter, time);
         }
 
-        currentProfession = professions[0];
-        typeWriter();
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            // This would be implemented for mobile menu functionality
+            alert('Mobile menu functionality would be implemented here');
+        }
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Navbar scroll effect and scroll-to-top button
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const scrollTop = document.getElementById('scrollTop');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            if (window.scrollY > 400) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
 
-                // Close mobile menu if open
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            // The form will submit to Formspree automatically
+            // You can add additional handling here if needed
+            console.log('Form submitted');
+        });
+
+        // Add fade-in animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
                 }
             });
-        });
+        }, observerOptions);
 
-        // Form submission (placeholder)
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! This is a demo form - your message was not actually sent.');
-                form.reset();
-            });
-        }
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
