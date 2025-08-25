@@ -127,6 +127,9 @@
     /* responsive */
     @media (max-width:980px){.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.avatar{width:280px;height:280px}}
     @media (max-width:640px){nav{padding:8px} .nav-links{display:none}.burger{display:flex}.hero-inner{padding:22px}.avatar{width:220px;height:220px} .mobile-drawer{width:100%}}
+    .logo-circle{
+      border-radius: 300px;
+    }
 
   </style>
 </head>
@@ -135,7 +138,7 @@
 
   <nav role="navigation" aria-label="Main" id="nav">
     <div class="nav-inner container">
-      <div class="brand"><div class="logo"><img src="images/noslogan.png" alt="Velocynix" width="44px"></div><div>Velocynix</div></div>
+      <div class="brand"><div class="logo"><img class="logo-circle" src="images/noslogan.png" alt="Velocynix" width="44px"></div><div>Velocynix</div></div>
       <div class="nav-links" id="navLinks">
         <a href="#home" data-scroll>Home</a>
         <a href="#about" data-scroll>About</a>
@@ -310,7 +313,7 @@
   <footer>
     <div class="container">
       <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px">
-        <div class="logo" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center"><img src="images/noslogan.png" alt="logo" width="34px"></div>
+        <div class="logo" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center"><img class="logo-circle" src="images/noslogan.png" alt="logo" width="34px"></div>
         <strong>Velocynix</strong>
       </div>
       <div style="color:var(--muted)">Building the future, one line of code at a time. © <span id="year"></span> Velocynix</div>
