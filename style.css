@@ -12,6 +12,25 @@
       --bg:#f6f7fb; --panel: rgba(11,17,34,0.03); --muted:#475569; --text:#0b1220;
       --glass: rgba(255,255,255,0.7); --glass-border:rgba(11,17,34,0.06); --card-shadow: 0 8px 30px rgba(2,6,23,0.06);
     }
+    /* Services cards */
+    .services-grid a,
+    .services-grid a h3 {
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+    
+    /* Portfolio cards */
+    .portfolio-grid a,
+    .portfolio-grid a h3 {
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+    .card a,
+    .project-card a {
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+
     .services-grid a {
      text-decoration: none;
      color: inherit;
