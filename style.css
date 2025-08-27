@@ -30,20 +30,6 @@
       text-decoration: none !important;
       color: inherit !important;
     }
-
-    .services-grid a {
-     text-decoration: none;
-     color: inherit;
-    }
-    .portfolio-grid a {
-     text-decoration: none;
-     color: inherit;
-    }
-    .portfolio-grid a h3 {
-     color: var(--text);
-     text-decoration: none;
-     transition: color 0.3s ease;
-    }
     .portfolio-grid a:hover h3 {
      color: var(--accent1);
     }
