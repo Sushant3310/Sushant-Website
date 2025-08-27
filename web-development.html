@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Web Development - Velocynix</title>
+  <meta name="description" content="Engineering fast, secure, and elegant web experiences that scale with your business.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <nav role="navigation" aria-label="Main" id="nav">
+    <div class="nav-inner container">
+      <div class="brand">
+        <div class="logo"><img class="logo-circle" src="images/noslogan.png" alt="Velocynix" width="44px"></div>
+        <div>Velocynix</div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:120px;padding-bottom:40px">
+    <h1 class="section-title">Web Development</h1>
+    <p class="section-sub">Engineering fast, secure, and elegant web experiences that scale with your business.</p>
+    <section class="card" style="margin-top:18px"><h2 style="margin-bottom:8px">Our Philosophy</h2>
+<p style='color:var(--muted);line-height:1.7;margin:10px 0'>At Velocynix, we don’t ship pages — we ship outcomes. Every build blends modern frameworks with human‑centered design to create experiences that convert and delight.</p>
+<p style='color:var(--muted);line-height:1.7;margin:10px 0'>We optimize for performance, accessibility, and maintainability so your site stays fast, inclusive, and easy to evolve.</p>
+</section>
+<section class="card" style="margin-top:18px"><h2 style="margin-bottom:8px">What We Deliver</h2>
+<p style='color:var(--muted);line-height:1.7;margin:10px 0'>Responsive interfaces that look and feel native across devices and screen sizes.</p>
+<p style='color:var(--muted);line-height:1.7;margin:10px 0'>Clean, component‑based architectures (React, Next.js, Vue) that scale gracefully.</p>
+<p style='color:var(--muted);line-height:1.7;margin:10px 0'>Production‑ready backends (Node.js, Django, Laravel) with secure APIs and integrations.</p>
+<p style='color:var(--muted);line-height:1.7;margin:10px 0'>SEO foundations, schema markup, and Core Web Vitals optimization.</p>
+</section>
+<section class="card" style="margin-top:18px"><h2 style="margin-bottom:8px">Integration & Automation</h2>
+<p style='color:var(--muted);line-height:1.7;margin:10px 0'>Payments, CRMs, analytics, email, search — integrated without friction.</p>
+<p style='color:var(--muted);line-height:1.7;margin:10px 0'>CI/CD pipelines for reliable deployments and versioned rollbacks.</p>
+</section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px">
+        <div class="logo" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center">
+          <img class="logo-circle" src="images/noslogan.png" alt="logo" width="34px">
+        </div>
+        <strong>Velocynix</strong>
+      </div>
+      <div style="color:var(--muted)">Building the future, one line of code at a time. © <span id="year"></span> Velocynix</div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
