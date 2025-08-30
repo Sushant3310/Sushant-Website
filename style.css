@@ -72,8 +72,8 @@
     .hero p{color:var(--muted);font-size:18px;margin:14px 0 20px;max-width:720px;margin-left:auto;margin-right:auto}
 
     /* typewriter */
-    .typewriter{display:inline-block;position:relative;padding-left:6px}
-    .typewriter .cursor{display:inline-block;width:2px;background:var(--text);height:1.15em;vertical-align:middle;margin-left:6px;animation:blink 800ms step-start infinite}
+    .typewriter{display:inline-block;position:relative;padding-left:6px;color: white;}
+    .typewriter .cursor{display:inline-block;width:2px;background:var(--text);height:1.15em;vertical-align:middle;margin-left:6px;animation:blink 800ms step-start infinite;}
     @keyframes blink{50%{opacity:0}}
 
     /* buttons */
