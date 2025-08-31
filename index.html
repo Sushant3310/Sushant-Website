@@ -173,7 +173,7 @@
             <div class="contact-icon" style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center">✉️</div>
             <div><strong>Email</strong><div style="color:var(--muted)">sushantbadal3@gmail.com</div></div>
           </div>
-          <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
+          <div class="location-contact" style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
             <div class="contact-icon" style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),#8b5cf6);display:flex;align-items:center;justify-content:center">📞</div>
             <div><strong>Phone</strong><div style="color:var(--muted)">+977 9765828270</div></div>
           </div>
@@ -185,6 +185,9 @@
           <div style="margin-top:14px;display:flex;gap:10px">
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/sushant-badal-838466319" target="_blank">LinkedIn</a>
             <a class="btn btn-ghost" href="https://x.com/SushantBad97587" target="_blank">X</a>
+            <a class="btn btn-ghost" href="https://www.facebook.com/sushant.badal.37" target="_blank">Facebook</a>
+            <a class="btn btn-ghost" href="https://www.instagram.com/sushant_badal/" target="_blank">Instagram</a>
+            <a class="btn btn-ghost" href="https://www.youtube.com/@SushantYT3" target="_blank">YouTube</a>
           </div>
         </div>
       </div>
@@ -369,5 +372,73 @@
     document.querySelectorAll('img').forEach(img=> img.setAttribute('draggable','false'));
 
   </script>
+  <!-- AI Chat Widget -->
+<div id="chatWidget">
+  <div id="chatHeader">
+    <span>AI Assistant</span>
+    <button id="closeChat">✕</button>
+  </div>
+  <div id="chatMessages"></div>
+  <div id="chatInputArea">
+    <input type="text" id="chatInput" placeholder="Type a message..." />
+    <button id="sendChat">➤</button>
+  </div>
+</div>
+<!-- Floating Chat Button -->
+<button id="chatToggle">💬</button>
+<!-- Tooltip above button -->
+<div id="chatTooltip">⬆ Click here to chat with AI</div>
+<script>
+  const chatWidget = document.getElementById("chatWidget");
+  const chatToggle = document.getElementById("chatToggle");
+  const closeChat = document.getElementById("closeChat");
+  const chatMessages = document.getElementById("chatMessages");
+  const chatInput = document.getElementById("chatInput");
+  const sendChat = document.getElementById("sendChat");
+
+  chatToggle.addEventListener("click", () => {
+    chatWidget.classList.add("open");
+    chatToggle.style.display = "none";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatWidget.classList.remove("open");
+    chatToggle.style.display = "flex";
+  });
+
+  sendChat.addEventListener("click", sendMessage);
+  chatInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") sendMessage();
+  });
+
+  async function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    addMessage("You", text);
+    chatInput.value = "";
+
+    try {
+      const response = await fetch("http://localhost:3000/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
+      });
+      const data = await response.json();
+      addMessage("AI", data.reply);
+    } catch (err) {
+      addMessage("AI", "⚠️ Error connecting to AI.");
+      console.error(err);
+    }
+  }
+
+  function addMessage(sender, text) {
+    const msg = document.createElement("div");
+    msg.className = "chat-msg " + (sender === "You" ? "user" : "bot");
+    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+</script>
+
 </body>
 </html>
