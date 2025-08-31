@@ -163,10 +163,21 @@
       --radius:14px;
       --transition:300ms cubic-bezier(.2,.9,.3,1);
     }
-    :root.light{
-      --bg:#f6f7fb; --panel: rgba(11,17,34,0.03); --muted:#475569; --text:#0b1220;
-      --glass: rgba(255,255,255,0.7); --glass-border:rgba(11,17,34,0.06); --card-shadow: 0 8px 30px rgba(2,6,23,0.06);
-    }
+   :root.light {
+  --bg:#f9fafb;                          /* soft off-white */
+  --panel:#ffffff;                       /* true white cards/panels */
+  --muted:#6b7280;                       /* neutral grey text */
+  --text:#1f2937;                        /* deep slate for headings/text */
+
+  --accent1:#06b6d4;                     /* cyan (brand) */
+  --accent2:#3b82f6;                     /* keep your strong blue */
+  
+  --glass: rgba(255,255,255,0.9);        /* subtle frosted glass */
+  --glass-border:rgba(0,0,0,0.05);       /* soft border */
+  --card-shadow: 0 6px 18px rgba(0,0,0,0.05); /* elegant shadow */
+}
+
+
     /* Services cards */
     .services-grid a,
     .services-grid a h3 {
@@ -358,4 +369,3 @@
     right: 16px;
   }
 }
-

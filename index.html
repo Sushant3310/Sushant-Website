@@ -186,8 +186,8 @@
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/sushant-badal-838466319" target="_blank">LinkedIn</a>
             <a class="btn btn-ghost" href="https://x.com/SushantBad97587" target="_blank">X</a>
             <a class="btn btn-ghost" href="https://www.facebook.com/sushant.badal.37" target="_blank">Facebook</a>
-            <a class="btn btn-ghost" href="https://www.instagram.com/sushant_badal/" target="_blank">Instagram</a>
-            <a class="btn btn-ghost" href="https://www.youtube.com/@SushantYT3" target="_blank">YouTube</a>
+            <a style="display: inline-block;" class="btn btn-ghost" href="https://www.instagram.com/sushant_badal/" target="_blank">Instagram</a>
+            <a style="display: block;" class="btn btn-ghost" href="https://www.youtube.com/@SushantYT3" target="_blank">YouTube</a>
           </div>
         </div>
       </div>
@@ -214,7 +214,6 @@
     </div>
   </footer>
 
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
 
   <script>
     // Utility: smooth scroll for links that have data-scroll
@@ -372,72 +371,10 @@
     document.querySelectorAll('img').forEach(img=> img.setAttribute('draggable','false'));
 
   </script>
-  <!-- AI Chat Widget -->
-<div id="chatWidget">
-  <div id="chatHeader">
-    <span>AI Assistant</span>
-    <button id="closeChat">✕</button>
-  </div>
-  <div id="chatMessages"></div>
-  <div id="chatInputArea">
-    <input type="text" id="chatInput" placeholder="Type a message..." />
-    <button id="sendChat">➤</button>
-  </div>
-</div>
-<!-- Floating Chat Button -->
-<button id="chatToggle">💬</button>
-<!-- Tooltip above button -->
-<div id="chatTooltip">⬆ Click here to chat with AI</div>
+
+<div id="chatTooltip">Click here to chat with AI</div>
 <script>
-  const chatWidget = document.getElementById("chatWidget");
-  const chatToggle = document.getElementById("chatToggle");
-  const closeChat = document.getElementById("closeChat");
-  const chatMessages = document.getElementById("chatMessages");
-  const chatInput = document.getElementById("chatInput");
-  const sendChat = document.getElementById("sendChat");
-
-  chatToggle.addEventListener("click", () => {
-    chatWidget.classList.add("open");
-    chatToggle.style.display = "none";
-  });
-
-  closeChat.addEventListener("click", () => {
-    chatWidget.classList.remove("open");
-    chatToggle.style.display = "flex";
-  });
-
-  sendChat.addEventListener("click", sendMessage);
-  chatInput.addEventListener("keypress", e => {
-    if (e.key === "Enter") sendMessage();
-  });
-
-  async function sendMessage() {
-    const text = chatInput.value.trim();
-    if (!text) return;
-    addMessage("You", text);
-    chatInput.value = "";
-
-    try {
-      const response = await fetch("http://localhost:3000/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text })
-      });
-      const data = await response.json();
-      addMessage("AI", data.reply);
-    } catch (err) {
-      addMessage("AI", "⚠️ Error connecting to AI.");
-      console.error(err);
-    }
-  }
-
-  function addMessage(sender, text) {
-    const msg = document.createElement("div");
-    msg.className = "chat-msg " + (sender === "You" ? "user" : "bot");
-    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
-    chatMessages.appendChild(msg);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="5amE8og5zxQxO5XHFXUi6";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
 
 </body>
