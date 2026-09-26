@@ -1,64 +1,108 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>E‑Commerce Platform - Velocynix</title>
-  <meta name="description" content="A next‑generation commerce stack delivering a frictionless buying experience.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E‑Commerce Platform — Velocynix</title>
+<meta name="description" content="A next‑generation commerce stack delivering a frictionless buying experience.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <nav role="navigation" aria-label="Main" id="nav">
-    <div class="nav-inner container">
-      <div class="brand">
-        <div class="logo"><img class="logo-circle" src="images/noslogan.png" alt="Velocynix" width="44px"></div>
-        <div>Velocynix</div>
-      </div>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#portfolio">Portfolio</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
 
-  <main class="container" style="padding-top:120px;padding-bottom:40px">
-    <h1 class="section-title">E‑Commerce Platform</h1>
-    <p class="section-sub">A next‑generation commerce stack delivering a frictionless buying experience.</p>
-    <section class="card" style="margin-top:18px"><h2 style="margin-bottom:8px">Overview</h2>
-<p style='color:var(--muted);line-height:1.7;margin:10px 0'>A full‑stack platform built with React, Node.js, and MongoDB to support growing catalogs and traffic spikes without compromising performance.</p>
-</section>
-<section class="card" style="margin-top:18px"><h2 style="margin-bottom:8px">Highlights</h2>
-<p style='color:var(--muted);line-height:1.7;margin:10px 0'>AI‑powered recommendations and dynamic search for faster product discovery.</p>
-<p style='color:var(--muted);line-height:1.7;margin:10px 0'>Real‑time inventory sync, order tracking, and secure payment integration.</p>
-<p style='color:var(--muted);line-height:1.7;margin:10px 0'>Mobile‑first UX with accessible components and instant feedback.</p>
-</section>
-<section class="card" style="margin-top:18px"><h2 style="margin-bottom:8px">Operations</h2>
-<p style='color:var(--muted);line-height:1.7;margin:10px 0'>Customizable admin with role‑based access, analytics, and refund workflows.</p>
-<p style='color:var(--muted);line-height:1.7;margin:10px 0'>CDN caching and image optimization for sub‑second page interactions.</p>
-</section>
-  </main>
-  
-  <footer>
-    <div class="container">
-      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px">
-        <div class="logo" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center">
-          <img class="logo-circle" src="images/noslogan.png" alt="logo" width="34px">
-        </div>
-        <strong>Velocynix</strong>
-      </div>
-      <div style="color:var(--muted)">Building the future, one line of code at a time. © <span id="year"></span> Velocynix</div>
+<nav class="site-nav scrolled" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt="Velocynix"><span>Velocynix</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#contact">Contact</a>
     </div>
-  </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt="Velocynix"><span>Velocynix</span></a>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  </div>
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</div>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Velocynix</a><span>／</span><span>Work / E‑Commerce</span></div>
+    <h1>E‑Commerce Platform</h1>
+    <p>A next‑generation commerce stack delivering a frictionless buying experience.</p>
+  </div>
+</header>
+
+<section style="padding-top:10px">
+  <div class="container" style="max-width:880px">
+    <div class="content-card"><h2>Overview</h2><p>A full‑stack platform built with React, Node.js, and MongoDB to support growing catalogs and traffic spikes without compromising performance.</p></div>
+    <div class="content-card"><h2>Highlights</h2><p>AI‑powered recommendations and dynamic search for faster product discovery.</p><p>Real‑time inventory sync, order tracking, and secure payment integration.</p><p>Mobile‑first UX with accessible components and instant feedback.</p></div>
+    <div class="content-card"><h2>Operations</h2><p>Customizable admin with role‑based access, analytics, and refund workflows.</p><p>CDN caching and image optimization for sub‑second page interactions.</p></div>
+    
+    <div class="page-cta">
+      <div><h3>Have a project like this in mind?</h3><p>Tell me what you're building — I'll reply with next steps within a day.</p></div>
+      <a class="btn btn-primary" href="index.html#contact">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="footer-brand" href="index.html"><img src="images/logo.png" alt="Velocynix"><span>Velocynix</span></a>
+    <div class="footer-links">
+      <a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#contact">Contact</a>
+    </div>
+    <div class="footer-note">© <span id="year"></span> Velocynix. Building the future, one line of code at a time.</div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('mobileDrawer');
+  function toggleDrawer(open){
+    if(open === undefined) open = !drawer.classList.contains('open');
+    drawer.classList.toggle('open', open);
+    drawer.setAttribute('aria-hidden', String(!drawer.classList.contains('open')));
+  }
+  burger.addEventListener('click', ()=> toggleDrawer(true));
+  document.getElementById('drawerClose').addEventListener('click', ()=> toggleDrawer(false));
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') toggleDrawer(false); });
+
+  const themeToggle = document.getElementById('themeToggle');
+  function applyTheme(theme){
+    document.documentElement.setAttribute('data-theme', theme);
+    try{ localStorage.setItem('theme', theme); }catch(e){}
+    themeToggle.textContent = theme === 'light' ? '🌞' : '🌙';
+  }
+  let saved = 'dark';
+  try{ saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); }catch(e){}
+  applyTheme(saved);
+  themeToggle.addEventListener('click', ()=> applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
+
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', ()=> scrollTopBtn.classList.toggle('show', window.scrollY > 400));
+  scrollTopBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+</script>
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="5amE8og5zxQxO5XHFXUi6";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
-
 </body>
 </html>

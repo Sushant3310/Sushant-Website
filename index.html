@@ -1,376 +1,318 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sushant Badal</title>
-  <meta name="description" content="Velocynix - Leading tech innovation company founded by Sushant Badal. Upgraded portfolio."/>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Velocynix — Sushant Badal</title>
+<meta name="description" content="Velocynix is a software studio led by Sushant Badal, building websites, mobile apps, cloud infrastructure, and AI-driven products."/>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="cursor" id="cursor"></div>
 
-  <nav role="navigation" aria-label="Main" id="nav">
-    <div class="nav-inner container">
-      <div class="brand"><div class="logo"><img class="logo-circle" src="images/noslogan.png" alt="Velocynix" width="44px"></div><div>Velocynix</div></div>
-      <div class="nav-links" id="navLinks">
-        <a href="#home" data-scroll>Home</a>
-        <a href="#about" data-scroll>About</a>
-        <a href="#services" data-scroll>Services</a>
-        <a href="#portfolio" data-scroll>Portfolio</a>
-        <a href="#contact" data-scroll>Contact</a>
-      </div>
-      <div class="nav-actions">
-        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">🌙</button>
-        <button class="burger" id="burger" aria-label="Open menu">
-          <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="2" rx="1" fill="#cbd5e1"/><rect y="6" width="20" height="2" rx="1" fill="#cbd5e1"/><rect y="12" width="20" height="2" rx="1" fill="#cbd5e1"/></svg>
-        </button>
-      </div>
+<nav class="site-nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home"><img src="images/logo.png" alt="Velocynix"><span>Velocynix</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
-
-  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
-      <div style="display:flex;align-items:center;gap:10px"><div class="logo" style="width:40px;height:40px;border-radius:10px">SB</div><strong>Velocynix</strong></div>
-      <button onclick="toggleDrawer(false)" style="background:transparent;border:none;color:var(--muted);font-size:20px">✕</button>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <a class="btn btn-primary btn-sm" href="#contact" style="display:none" id="navCta">Start a project</a>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span></button>
     </div>
-    <nav style="display:flex;flex-direction:column;gap:8px">
-      <a href="#home" data-drawer>Home</a>
-      <a href="#about" data-drawer>About</a>
-      <a href="#services" data-drawer>Services</a>
-      <a href="#portfolio" data-drawer>Portfolio</a>
-      <a href="#contact" data-drawer>Contact</a>
-    </nav>
   </div>
+</nav>
 
-  <!-- HERO -->
-  <header id="home" class="hero" role="banner">
-    <div class="hero-inner container page-enter page-enter-active" id="heroInner">
-      <h1><span class="name">Sushant Badal</span><span class="role"> — <span class="typewriter" id="typewriter"></span><span class="cursor" aria-hidden="true"></span></span></h1>
-      <p>Building modern digital experiences — websites, mobile apps, and AI-powered tools. Welcome to <strong style="background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Velocynix</strong>.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px">
-        <a class="btn btn-primary" href="#services" data-scroll>Explore Services</a>
-        <a class="btn btn-ghost" href="#contact" data-scroll>Contact</a>
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <a class="brand" href="#home"><img src="images/logo.png" alt="Velocynix"><span>Velocynix</span></a>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  </div>
+  <nav>
+    <a href="#home" data-drawer>Home</a>
+    <a href="#about" data-drawer>About</a>
+    <a href="#services" data-drawer>Services</a>
+    <a href="#work" data-drawer>Work</a>
+    <a href="#contact" data-drawer>Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<header id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1>Software that ships, not just slides.<span class="role" id="typewriter"><span class="blink"></span></span></h1>
+      <p class="lead">Velocynix is a small studio run by <strong>Sushant Badal</strong>. We design and build websites, mobile apps, and AI‑powered products for teams who need to move from idea to production without the usual back‑and‑forth.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Start a project</a>
+        <a class="btn btn-ghost" href="#work">See the work</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b data-target="60">0</b><span>Projects delivered</span></div>
+        <div class="stat"><b data-target="48">0</b><span>Clients served</span></div>
+        <div class="stat"><b>Nepal</b><span>Based, remote‑friendly</span></div>
       </div>
     </div>
-  </header>
 
-  <!-- ABOUT -->
-  <section id="about" aria-labelledby="aboutTitle">
-    <h2 class="section-title" id="aboutTitle">About Velocynix</h2>
-    <p class="section-sub">We design and build delightful digital products that help teams and businesses grow.</p>
-    <div class="about-grid container">
-      <div class="avatar card" aria-hidden="true">
-        <img src="images/sushant.png" alt="Sushant Badal">
-      </div>
-      <div class="bio">
-        <p>Hello — I'm Sushant Badal, founder of Velocynix. I focus on crafting practical, beautiful, and maintainable digital products. My work blends design thinking, engineering craftsmanship, and applied AI.</p>
-        <p class="muted">I build websites, mobile app wrappers, and products that help teams automate tasks and present their best ideas to the world.</p>
-
-        <div class="stats" aria-hidden="true">
-          <div class="stat"><div class="num" data-target="48">48+</div><div class="label" style="color:var(--muted);margin-top:6px">Happy Clients</div></div>
-          <div class="stat"><div class="num" data-target="92">60+</div><div class="label" style="color:var(--muted);margin-top:6px">Projects Completed</div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" aria-labelledby="servicesTitle">
-    <h2 class="section-title" id="servicesTitle">Services</h2>
-    <p class="section-sub">From concept to launch — end-to-end product and engineering services.</p>
-    <div class="services-grid container" id="servicesGrid">
-      <a href="web-development.html">
-        <div class="card" data-tilt>
-        <div class="icon" style="background:linear-gradient(135deg,var(--accent1),var(--accent2))">💻</div>
-        <h3>Web Development</h3>
-        <p style="color:var(--muted)">Responsive, scalable websites and web apps.</p>
-      </div>
-      </a>
-
-      <a href="mobile-apps.html">
-        <div class="card" data-tilt>
-        <div class="icon" style="background:linear-gradient(135deg,var(--accent2),#8b5cf6)">📱</div>
-        <h3>Mobile Apps</h3>
-        <p style="color:var(--muted)">Cross-platform and native mobile solutions.</p>
-      </div>
-      </a>
-
-      <a href="cloud-devops.html">
-        <div class="card" data-tilt>
-        <div class="icon" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">☁️</div>
-        <h3 style="text-decoration: none;">Cloud & DevOps</h3>
-        <p style="color:var(--muted)">Scalable cloud infra, CI/CD, and deployments.</p>
-      </div>
-      </a>
-
-      <a href="data-ai.html">
-        <div class="card" data-tilt>
-        <div class="icon" style="background:linear-gradient(135deg,#ec4899,#ef4444)">🗄️</div>
-        <h3>Data & AI</h3>
-        <p style="color:var(--muted)">Analytics, automation, and AI-driven features.</p>
-      </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio" aria-labelledby="portfolioTitle">
-    <h2 class="section-title" id="portfolioTitle">Selected Work</h2>
-    <p class="section-sub">Examples of solutions delivered for clients and partners.</p>
-    <div class="portfolio-grid container">
-     <a href="ecommerce.html">
-       <div class="project" data-tilt>
-        <div class="project-card">
-          <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="E-Commerce Platform">
-          <div class="pc-body">
-            <h3>E-Commerce Platform</h3>
-            <p style="color:var(--muted)">Full-stack commerce solution with modern UX.</p>
-            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+    <div class="device" aria-hidden="true">
+      <div class="device-bar"><i></i><i></i><i></i></div>
+      <div class="device-body">
+        <div class="device-row">
+          <div class="device-side"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="device-main">
+            <div class="device-chart">
+              <b style="height:40%"></b><b style="height:65%"></b><b style="height:45%"></b>
+              <b style="height:80%"></b><b style="height:55%"></b><b style="height:70%"></b><b style="height:50%"></b>
+            </div>
+            <div class="device-cards"><div></div><div></div></div>
+            <div class="device-line w80"></div>
+            <div class="device-line w60"></div>
           </div>
         </div>
       </div>
-     </a>
-
-     <a href="saas.html">
-       <div class="project" data-tilt>
-        <div class="project-card">
-          <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="SaaS">
-          <div class="pc-body">
-            <h3>SaaS Management</h3>
-            <p style="color:var(--muted)">Enterprise workflow and automation platform.</p>
-            <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span></div>
-          </div>
-        </div>
+      <div class="device-float">
+        <span class="dot"></span>
+        <div><b>Deployed</b><span>build passing</span></div>
       </div>
-     </a>
-
-     <a href="analytics.html">
-       <div class="project" data-tilt>
-        <div class="project-card">
-          <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Analytics">
-          <div class="pc-body">
-            <h3>Analytics Dashboard</h3>
-            <p style="color:var(--muted)">Real-time dashboards and insights.</p>
-            <div class="tags"><span class="tag">Vue</span><span class="tag">Python</span></div>
-          </div>
-        </div>
-      </div>
-     </a>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- CONTACT -->
-  <section id="contact" aria-labelledby="contactTitle">
-    <h2 class="section-title" id="contactTitle">Get in Touch</h2>
-    <p class="section-sub">Tell me about your project — I respond quickly and clearly.</p>
-    <div class="contact-grid container">
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-head"><h2>About Velocynix</h2><p>We design and build practical digital products that help teams and businesses grow.</p></div>
+    <div class="about-grid">
+      <div class="about-photo"><img src="images/sushant.png" alt="Sushant Badal, founder of Velocynix"></div>
+      <div class="about-copy">
+        <p>I'm Sushant Badal, founder of Velocynix. I focus on crafting practical, well‑built digital products that blend design thinking, solid engineering, and applied AI.</p>
+        <p>I build websites, mobile apps, and internal tools that help teams automate the boring parts and put their best work in front of the world — with a bias toward shipping over shipping decks.</p>
+        <div class="about-facts">
+          <div><b>Full‑stack delivery</b><span>Design through deployment</span></div>
+          <div><b>AI‑assisted builds</b><span>Automation baked in, not bolted on</span></div>
+          <div><b>Direct communication</b><span>You work with me, not a queue</span></div>
+          <div><b>Remote‑first</b><span>Clients across time zones</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head"><h2>What I build</h2><p>Four core disciplines, applied end‑to‑end — from the first sketch to what's running in production.</p></div>
+    <div class="service-list">
+      <a class="service-row" href="web-development.html">
+        <span class="service-num">01</span>
+        <span class="service-info"><h3>Web Development</h3><p>Responsive, scalable websites and web apps built with modern frameworks and clean APIs.</p></span>
+        <span class="service-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="service-row" href="mobile-apps.html">
+        <span class="service-num">02</span>
+        <span class="service-info"><h3>Mobile Apps</h3><p>Cross‑platform and native apps for iOS and Android, built for speed and retention.</p></span>
+        <span class="service-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="service-row" href="cloud-devops.html">
+        <span class="service-num">03</span>
+        <span class="service-info"><h3>Cloud &amp; DevOps</h3><p>Resilient cloud infrastructure, CI/CD pipelines, and deployments that don't page you at 2am.</p></span>
+        <span class="service-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="service-row" href="data-ai.html">
+        <span class="service-num">04</span>
+        <span class="service-info"><h3>Data &amp; AI</h3><p>Analytics, automation, and AI‑driven features that turn raw data into decisions.</p></span>
+        <span class="service-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-head"><h2>How a project runs</h2><p>The same four stages, every time, so you always know what's next.</p></div>
+    <div class="process-grid">
+      <div class="process-step"><span class="pnum">01</span><h4>Discover</h4><p>We define the problem, the users, and what "done" actually looks like.</p></div>
+      <div class="process-step"><span class="pnum">02</span><h4>Design</h4><p>Wireframes and flows get reviewed with you before a line of code is written.</p></div>
+      <div class="process-step"><span class="pnum">03</span><h4>Build</h4><p>Iterative development with working previews, not a black box until launch day.</p></div>
+      <div class="process-step"><span class="pnum">04</span><h4>Launch</h4><p>Deployed, monitored, and handed over with documentation you can actually use.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work">
+  <div class="container">
+    <div class="section-head"><h2>Selected work</h2><p>A few examples of what's shipped for clients and partners.</p></div>
+    <div class="portfolio-grid">
+      <a class="project-card" href="ecommerce.html">
+        <div class="thumb"><img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="E-Commerce Platform" loading="lazy"></div>
+        <div class="pc-body">
+          <h3>E‑Commerce Platform</h3>
+          <p>Full‑stack commerce build with recommendations and real‑time inventory.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+        </div>
+      </a>
+      <a class="project-card" href="saas.html">
+        <div class="thumb"><img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="SaaS Management Suite" loading="lazy"></div>
+        <div class="pc-body">
+          <h3>SaaS Management Suite</h3>
+          <p>Enterprise workflow and automation platform with granular access control.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span></div>
+        </div>
+      </a>
+      <a class="project-card" href="analytics.html">
+        <div class="thumb"><img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Analytics Dashboard" loading="lazy"></div>
+        <div class="pc-body">
+          <h3>Analytics Dashboard</h3>
+          <p>Real‑time dashboards that turn multi‑source data into a single view.</p>
+          <div class="tags"><span class="tag">Vue</span><span class="tag">Python</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head"><h2>Get in touch</h2><p>Tell me about your project — I respond quickly and clearly.</p></div>
+    <div class="contact-grid">
       <div class="contact-card">
-        <h3>Contact info</h3>
-        <div style="margin-top:12px">
-          <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
-            <div class="contact-icon" style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center">✉️</div>
-            <div><strong>Email</strong><div style="color:var(--muted)">sushantbadal3@gmail.com</div></div>
-          </div>
-          <div class="location-contact" style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
-            <div class="contact-icon" style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),#8b5cf6);display:flex;align-items:center;justify-content:center">📞</div>
-            <div><strong>Phone</strong><div style="color:var(--muted)">+977 9765828270</div></div>
-          </div>
-          <div style="display:flex;gap:10px;align-items:center">
-            <div class="contact-icon" style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#8b5cf6,#ec4899);display:flex;align-items:center;justify-content:center">📍</div>
-            <div><strong>Location</strong><div style="color:var(--muted)">Kathmandu, Nepal</div></div>
-          </div>
-
-          <div style="margin-top:14px;display:flex;gap:10px">
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/sushant-badal-838466319" target="_blank">LinkedIn</a>
-            <a class="btn btn-ghost" href="https://x.com/SushantBad97587" target="_blank">X</a>
-            <a class="btn btn-ghost" href="https://www.facebook.com/sushant.badal.37" target="_blank">Facebook</a>
-            <a style="display: inline-block;" class="btn btn-ghost" href="https://www.instagram.com/sushant_badal/" target="_blank">Instagram</a>
-            <a style="display: block;" class="btn btn-ghost" href="https://www.youtube.com/@SushantYT3" target="_blank">YouTube</a>
-          </div>
+        <div class="contact-item"><span class="contact-icon">✉️</span><div><b>Email</b><span>sushantbadal3@gmail.com</span></div></div>
+        <div class="contact-item"><span class="contact-icon">📞</span><div><b>Phone</b><span>+977 9765828270</span></div></div>
+        <div class="contact-item"><span class="contact-icon">📍</span><div><b>Location</b><span>Kathmandu, Nepal</span></div></div>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/sushant-badal-838466319" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://x.com/SushantBad97587" target="_blank" rel="noopener" aria-label="X">X</a>
+          <a href="https://www.facebook.com/sushant.badal.37" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/sushant_badal/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          <a href="https://www.youtube.com/@SushantYT3" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
         </div>
       </div>
-
       <div class="contact-card">
-        <form action="https://api.web3forms.com/submit" method="post">
-          <div class="form-group"><input type="hidden" name="access_key" value="19e7762b-aedb-43e1-b0ff-037404210ef9"></div>
+        <form action="https://api.web3forms.com/submit" method="post" onsubmit="return handleSubmit(event)">
+          <input type="hidden" name="access_key" value="19e7762b-aedb-43e1-b0ff-037404210ef9">
           <div class="form-group"><label for="name">Name</label><input id="name" class="form-control" name="name" required></div>
           <div class="form-group"><label for="email">Email</label><input id="email" class="form-control" type="email" name="email" required></div>
-          <div class="form-group"><label for="message">Message</label><textarea id="message" class="form-control" name="message" rows="6" required></textarea></div>
-          <button class="btn btn-primary" type="submit" style="width:100%">Send Message</button>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" class="form-control" name="message" rows="5" required></textarea></div>
+          <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Send message</button>
         </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px">
-        <div class="logo" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center"><img class="logo-circle" src="images/noslogan.png" alt="logo" width="34px"></div>
-        <strong>Velocynix</strong>
-      </div>
-      <div style="color:var(--muted)">Building the future, one line of code at a time. © <span id="year"></span> Velocynix</div>
+<footer>
+  <div class="container footer-inner">
+    <a class="footer-brand" href="#home"><img src="images/logo.png" alt="Velocynix"><span>Velocynix</span></a>
+    <div class="footer-links">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#contact">Contact</a>
     </div>
-  </footer>
+    <div class="footer-note">© <span id="year"></span> Velocynix. Building the future, one line of code at a time.</div>
+  </div>
+</footer>
 
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
 
-  <script>
-    // Utility: smooth scroll for links that have data-scroll
-    document.querySelectorAll('[data-scroll]').forEach(el=>el.addEventListener('click', function(e){
-      e.preventDefault();
-      const id = this.getAttribute('href').replace('#','');
-      const target = document.getElementById(id);
-      if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
-    }));
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Update year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('a[href^="#"]').forEach(el=>el.addEventListener('click', function(e){
+    const id = this.getAttribute('href').replace('#','');
+    const target = document.getElementById(id);
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+  }));
 
-    // Mobile drawer
-    const burger = document.getElementById('burger');
-    const drawer = document.getElementById('mobileDrawer');
-    function toggleDrawer(open){
-      if(open === undefined) open = !drawer.classList.contains('open');
-      drawer.classList.toggle('open', open);
-      drawer.setAttribute('aria-hidden', String(!drawer.classList.contains('open')));
-    }
-    burger.addEventListener('click', ()=> toggleDrawer(true));
-    document.querySelectorAll('[data-drawer]').forEach(a=>a.addEventListener('click', ()=> toggleDrawer(false)));
+  // Mobile drawer
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('mobileDrawer');
+  function toggleDrawer(open){
+    if(open === undefined) open = !drawer.classList.contains('open');
+    drawer.classList.toggle('open', open);
+    drawer.setAttribute('aria-hidden', String(!drawer.classList.contains('open')));
+  }
+  burger.addEventListener('click', ()=> toggleDrawer(true));
+  document.getElementById('drawerClose').addEventListener('click', ()=> toggleDrawer(false));
+  document.querySelectorAll('[data-drawer]').forEach(a=>a.addEventListener('click', ()=> toggleDrawer(false)));
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') toggleDrawer(false); });
 
-    // Theme toggle with persistence
-    const themeToggle = document.getElementById('themeToggle');
-    function applyTheme(theme){
-      if(theme === 'light') document.documentElement.classList.add('light');
-      else document.documentElement.classList.remove('light');
-      localStorage.setItem('theme', theme);
-      themeToggle.textContent = theme === 'light' ? '🌞' : '🌙';
-    }
-    const saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    applyTheme(saved);
-    themeToggle.addEventListener('click', ()=> applyTheme(document.documentElement.classList.contains('light') ? 'dark' : 'light'));
+  // Theme toggle with persistence
+  const themeToggle = document.getElementById('themeToggle');
+  function applyTheme(theme){
+    document.documentElement.setAttribute('data-theme', theme);
+    try{ localStorage.setItem('theme', theme); }catch(e){}
+    themeToggle.textContent = theme === 'light' ? '🌞' : '🌙';
+  }
+  let saved = 'dark';
+  try{ saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); }catch(e){}
+  applyTheme(saved);
+  themeToggle.addEventListener('click', ()=> applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
 
-    // Scroll behaviour: navbar shrink, scroll-to-top
-    const nav = document.getElementById('nav');
-    const scrollTopBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY>60) nav.style.backdropFilter = 'blur(10px)';
-      else nav.style.backdropFilter = 'blur(6px)';
-      if(window.scrollY>400) scrollTopBtn.classList.add('show'); else scrollTopBtn.classList.remove('show');
-    });
-    scrollTopBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+  // Nav shadow + scroll-top on scroll
+  const nav = document.getElementById('nav');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', ()=>{
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+  });
+  scrollTopBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
 
-    // IntersectionObserver for fade-in and animating numbers
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('fade-in');
-          // number animation
-          entry.target.querySelectorAll('.num').forEach(elem=>{
-            const target = +elem.getAttribute('data-target') || 0;
-            if(!elem.dataset.animated){
-              elem.dataset.animated = '1';
-              let start = 0;
-              const duration = 1400;
-              const startTime = performance.now();
-              function tick(now){
-                const t = Math.min(1, (now - startTime)/duration);
-                elem.textContent = Math.floor(t*target + (1-t)*0);
-                if(t<1) requestAnimationFrame(tick);
-                else elem.textContent = target + '+';
-              }
-              requestAnimationFrame(tick);
-            }
-          });
-        }
-      });
-    },{threshold:0.12});
-    document.querySelectorAll('section, .card, .project-card, .avatar, .stat').forEach(el=> io.observe(el));
-
-    // Typewriter effect (rotating phrases)
-    const phrases = ['Tech Innovator', 'Full-stack Developer', 'Mobile App Maker', 'AI Integrator'];
-    const tw = document.getElementById('typewriter');
-    let pi = 0, ti = 0, deleting = false;
-    function type(){
-      const current = phrases[pi];
-      if(!deleting){
-        tw.textContent = current.substring(0, ti+1);
-        ti++;
-        if(ti === current.length){ deleting=true; setTimeout(type,900); return; }
-      } else {
-        tw.textContent = current.substring(0, ti-1);
-        ti--;
-        if(ti===0){ deleting=false; pi=(pi+1)%phrases.length; setTimeout(type,500); return; }
-      }
-      setTimeout(type, deleting?60:90);
-    }
-    type();
-
-    // 3D tilt for elements with data-tilt
-    function setupTilt(selector){
-      const nodes = document.querySelectorAll(selector);
-      nodes.forEach(node=>{
-        node.addEventListener('pointermove', (e)=>{
-          const rect = node.getBoundingClientRect();
-          const x = (e.clientX - rect.left) / rect.width;
-          const y = (e.clientY - rect.top) / rect.height;
-          const rx = (y - 0.5) * 12;
-          const ry = (x - 0.5) * -12;
-          node.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`;
+  // Animate stat numbers once in view
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.stat b[data-target]').forEach(elem=>{
+          if(elem.dataset.animated) return;
+          elem.dataset.animated = '1';
+          const target = +elem.getAttribute('data-target') || 0;
+          const duration = 1100, start = performance.now();
+          function tick(now){
+            const t = Math.min(1, (now-start)/duration);
+            elem.textContent = Math.floor(t*target) + (t>=1 ? '+' : '');
+            if(t<1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
         });
-        node.addEventListener('pointerleave', ()=> node.style.transform = '');
-      });
+      }
+    });
+  },{threshold:0.4});
+  io.observe(document.querySelector('.hero-stats'));
+
+  // Typewriter role rotator
+  const phrases = ['Web Development.', 'Mobile Apps.', 'Cloud & DevOps.', 'Data & AI.'];
+  const tw = document.getElementById('typewriter');
+  const blink = tw.querySelector('.blink');
+  let pi = 0, ti = 0, deleting = false;
+  function type(){
+    const current = phrases[pi];
+    const shown = deleting ? current.substring(0, ti-1) : current.substring(0, ti+1);
+    tw.textContent = shown;
+    tw.appendChild(blink);
+    if(!deleting){
+      ti++;
+      if(ti === current.length){ deleting = true; setTimeout(type, 1100); return; }
+    } else {
+      ti--;
+      if(ti === 0){ deleting = false; pi = (pi+1)%phrases.length; setTimeout(type, 400); return; }
     }
-    setupTilt('[data-tilt]');
+    setTimeout(type, deleting ? 45 : 75);
+  }
+  type();
 
-    // Custom cursor
-    const cursor = document.getElementById('cursor');
-    let cx = window.innerWidth/2, cy = window.innerHeight/2;
-    document.addEventListener('mousemove',(e)=>{ cx=e.clientX; cy=e.clientY; cursor.style.opacity = 1; });
-    function renderCursor(){ cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%) scale(1)`; requestAnimationFrame(renderCursor); }
-    renderCursor();
-    document.querySelectorAll('a, button, .card, .project-card').forEach(el=>{
-      el.addEventListener('pointerenter', ()=> cursor.style.transform += ' scale(1.6)');
-      el.addEventListener('pointerleave', ()=> cursor.style.transform = cursor.style.transform.replace(' scale(1.6)',''));
-    });
-
-    // Form handling (demo)
-    function handleSubmit(e){
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name?.value || '';
-      const email = form.email?.value || '';
-      const message = form.message?.value || '';
-      // Basic validation/show toast
-      alert('Thanks '+ (name||'there') + '! Your message was received.');
-      form.reset();
-    }
-
-    // animate page-enter elements on load
-    window.addEventListener('load', ()=>{
-      document.querySelectorAll('.page-enter').forEach(el=> el.classList.remove('page-enter'));
-      // small entrance animations
-      document.querySelectorAll('.card, .project-card, .avatar').forEach((el,i)=> setTimeout(()=> el.style.opacity=1, i*80));
-    });
-
-    // Accessibility: close drawer on ESC
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') toggleDrawer(false); });
-
-    // Prevent focus trap on interactive areas when drawer closed
-    drawer.addEventListener('transitionend', ()=>{
-      if(!drawer.classList.contains('open')) drawer.querySelectorAll('a, button').forEach(a=> a.tabIndex = -1);
-      else drawer.querySelectorAll('a, button').forEach(a=> a.tabIndex = 0);
-    });
-
-    // Small polish: click outside drawer to close
-    document.addEventListener('click', (e)=>{
-      if(drawer.classList.contains('open') && !drawer.contains(e.target) && !burger.contains(e.target)) toggleDrawer(false);
-    });
-
-    // Ensure images are not draggable (polish)
-    document.querySelectorAll('img').forEach(img=> img.setAttribute('draggable','false'));
-
-  </script>
+  function handleSubmit(e){
+    e.preventDefault();
+    const form = e.target;
+    fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
+      .then(()=>{ alert('Thanks ' + (form.name.value || 'there') + '! Your message was received.'); form.reset(); })
+      .catch(()=>{ alert('Something went wrong sending that — please email sushantbadal3@gmail.com directly.'); });
+    return false;
+  }
+</script>
 
 <div id="chatTooltip">Click here to chat with AI</div>
 <script>
